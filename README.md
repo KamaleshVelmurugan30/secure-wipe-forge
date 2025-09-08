@@ -1,73 +1,251 @@
-# Welcome to your Lovable project
+# TrustWipe Platform
 
-## Project info
+**Enterprise Data Sanitization & Asset Recycling Platform**
 
-**URL**: https://lovable.dev/projects/ababbb9e-523f-4eba-8527-844a2531b164
+A production-grade, cross-platform data wiping solution that delivers secure, verifiable sanitization with blockchain-backed tamper-proof logging for trustworthy IT asset recycling.
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+### Multi-Layered Data Sanitization
+- **IEEE 2883-2022 & NIST SP 800-88 Rev.1 Compliance**
+- Support for HDD/SSD/NVMe/USB/Flash media types
+- Clear, Purge, and Cryptographic Erase methods
+- Auto-selection based on device capabilities
+- HPA/DCO removal for HDDs
+- NVMe Sanitize/Format commands
+- SCSI SANITIZE/UNMAP operations
 
-**Use Lovable**
+### Blockchain Proof-of-Wipe
+- Immutable certificate logging on Ethereum-compatible chains
+- Tamper-proof verification without storing PII
+- Public verification of sanitization certificates
+- Smart contract registry for transparency
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ababbb9e-523f-4eba-8527-844a2531b164) and start prompting.
+### Automated Certification
+- JSON certificate generation with device details
+- PDF reports with digital signatures
+- PKCS#7/CMS signatures (RSA-PSS, ECDSA)
+- Public key registry and verification tools
 
-Changes made via Lovable will be committed automatically to this repo.
+### Enterprise Dashboard
+- Asset lifecycle management
+- Real-time wipe operation monitoring  
+- Compliance reporting and audit trails
+- Role-based access control
+- Multi-language localization support
 
-**Use your preferred IDE**
+### Recycler Integration
+- Certified partner workflow management
+- Automated certificate delivery
+- API/webhook integrations
+- Compliance verification tracking
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏗️ Architecture
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Web Dashboard (Current Implementation)
+- **Frontend**: React + TypeScript + Tailwind CSS
+- **Components**: Asset management, blockchain verification, certificate handling
+- **UI/UX**: Professional security-focused design system
 
-Follow these steps:
+### Planned Full System Architecture
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+/trustwipe/
+├── engine/              # Rust core wipe engine
+│   ├── core/           # Device detection & sanitization
+│   ├── os_win/         # Windows IOCTL backends  
+│   ├── os_linux/       # Linux SG_IO/BLK backends
+│   ├── os_android/     # Android JNI wrapper
+│   └── algos/          # ATA/NVMe/SCSI algorithms
+├── cert/               # Python certificate service
+│   ├── schema/         # JSON certificate schemas
+│   ├── generator/      # Certificate generation
+│   ├── pdf/            # PDF report creation
+│   ├── signer/         # PKCS#7/CMS signing
+│   └── api/            # FastAPI endpoints
+├── chain/              # Blockchain components
+│   ├── contracts/      # Solidity registry contracts
+│   ├── relayer/        # Transaction submission
+│   └── scripts/        # Deployment automation
+├── dashboard/          # Web interface (current)
+│   ├── server/         # FastAPI backend
+│   └── web/            # React frontend
+├── boot/               # Bootable sanitization image
+│   ├── rootfs/         # Minimal Linux filesystem
+│   └── scripts/        # ISO/USB creation
+└── integrations/       # External integrations
+    ├── recycler_api/   # Partner API clients
+    └── webhooks/       # Notification handlers
 ```
 
-**Edit a file directly in GitHub**
+## 🔧 Technology Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Backend**: FastAPI (Python), Rust (Core Engine)
+- **Blockchain**: Solidity, Ethereum/Polygon
+- **Certificates**: OpenSSL, PKCS#7/CMS, X.509
+- **Database**: PostgreSQL (planned)
+- **Deployment**: Docker, Kubernetes (planned)
 
-**Use GitHub Codespaces**
+## 📋 Standards Compliance
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### IEEE 2883-2022
+- Clear/Purge/Destruct sanitization taxonomy
+- Media-specific technique selection
+- Verification emphasis and documentation
 
-## What technologies are used for this project?
+### NIST SP 800-88 Rev.1  
+- Decision flow implementation
+- Appendix A media mapping
+- Verification requirements
+- Documentation standards
 
-This project is built with:
+### Security Standards
+- PKCS#7/CMS digital signatures
+- X.509 certificate management
+- RSA-PSS and ECDSA algorithms
+- Tamper-proof audit logging
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🚦 Current Status
 
-## How can I deploy this project?
+**Phase 1: Web Dashboard** ✅ **COMPLETE**
+- Asset management interface
+- Blockchain verification UI
+- Certificate upload/verification
+- Recycler integration dashboard
+- Compliance mapping reference
 
-Simply open [Lovable](https://lovable.dev/projects/ababbb9e-523f-4eba-8527-844a2531b164) and click on Share -> Publish.
+**Phase 2: Core Engine** (Planned)
+- Rust sanitization engine
+- Multi-platform device backends
+- IEEE/NIST method implementation
 
-## Can I connect a custom domain to my Lovable project?
+**Phase 3: Certification System** (Planned)  
+- Python certificate service
+- Digital signature infrastructure
+- Public verification tools
 
-Yes, you can!
+**Phase 4: Blockchain Integration** (Planned)
+- Smart contract deployment
+- Transaction relayer service
+- Public verification portal
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Phase 5: Full Integration** (Planned)
+- End-to-end workflow automation
+- Bootable sanitization image
+- Partner API integrations
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🎯 Getting Started
+
+This is a Lovable project built with React, TypeScript, and Tailwind CSS.
+
+### Development Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd trustwipe-platform
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open browser**
+   Navigate to `http://localhost:8080`
+
+### Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ui/             # shadcn/ui components
+│   ├── AssetManagement.tsx
+│   ├── BlockchainVerification.tsx  
+│   ├── CertificateUpload.tsx
+│   ├── CertificateViewer.tsx
+│   ├── ComplianceMapping.tsx
+│   └── RecyclerIntegration.tsx
+├── pages/              # Route components
+│   ├── Index.tsx       # Main dashboard
+│   └── NotFound.tsx    # 404 page
+├── lib/                # Utilities
+└── hooks/              # React hooks
+```
+
+## 🔒 Security Features
+
+- **End-to-End Verification**: From sanitization to blockchain registration
+- **Cryptographic Signatures**: PKCS#7 certificate signing
+- **Tamper-Proof Logging**: Blockchain-backed audit trails  
+- **Privacy Preserving**: No PII stored on-chain
+- **Standards Compliant**: IEEE 2883 & NIST SP 800-88
+- **Role-Based Access**: Operator/Admin/Auditor permissions
+
+## 🌱 Sustainability Impact
+
+TrustWipe enables responsible IT asset lifecycle management by:
+
+- **Verified Sanitization**: Cryptographically provable data destruction
+- **Recycler Integration**: Streamlined certified partner workflows  
+- **Compliance Automation**: Reduced manual audit overhead
+- **Asset Transparency**: Complete lifecycle traceability
+- **Environmental Benefits**: Enabling secure asset reuse vs. destruction
+
+## 🤝 Integration Partners
+
+**Certified Recycler Requirements**:
+- R2 or e-Stewards certification preferred
+- ISO 14001 environmental management
+- SOC 2 or ISO 27001 data security compliance
+- Secure API endpoints (HTTPS/TLS 1.3)
+
+**Integration Methods**:
+- Real-time webhooks for certificate delivery
+- RESTful API for certificate retrieval  
+- Secure email with PDF/JSON attachments
+- Blockchain verification for public trust
+
+## 📊 Roadmap
+
+**Q1 2025**: Core Engine Development
+- Rust sanitization engine
+- Multi-platform device support
+- IEEE/NIST method implementation
+
+**Q2 2025**: Certification Infrastructure
+- Python certificate service
+- Digital signature system
+- Public verification portal
+
+**Q3 2025**: Blockchain Integration  
+- Smart contract deployment
+- Transaction automation
+- Public verification
+
+**Q4 2025**: Enterprise Features
+- Advanced reporting
+- API ecosystem
+- Mobile applications
+
+## 📝 License
+
+This project is proprietary software for enterprise data sanitization.
+For licensing inquiries, contact: license@trustwipe.com
+
+## 🆘 Support
+
+- **Documentation**: [docs.trustwipe.com](https://docs.trustwipe.com)
+- **Support Portal**: [support.trustwipe.com](https://support.trustwipe.com)  
+- **Email**: support@trustwipe.com
+- **Emergency**: +1-800-TRUSTWIPE
+
+---
+
+**Built with ❤️ for sustainable IT asset lifecycle management**

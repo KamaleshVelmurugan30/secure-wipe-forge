@@ -15,9 +15,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-smooth",
         ghost: "hover:bg-accent hover:text-accent-foreground transition-smooth",
         link: "text-primary underline-offset-4 hover:underline transition-smooth",
-        security: "bg-gradient-security text-primary-foreground hover:shadow-security transition-bounce border-0 font-semibold",
+        trustwipe: "bg-gradient-trustwipe text-primary-foreground hover:shadow-security transition-bounce border-0 font-semibold",
+        blockchain: "bg-gradient-blockchain text-blockchain-foreground hover:shadow-security transition-bounce border-0 font-semibold",
         success: "bg-gradient-success text-success-foreground hover:shadow-success transition-bounce border-0 font-semibold",
-        hero: "bg-gradient-security text-primary-foreground hover:shadow-elegant hover:scale-105 transition-bounce border-0 font-bold text-lg px-8 py-4",
+        hero: "bg-gradient-trustwipe text-primary-foreground hover:shadow-elegant hover:scale-105 transition-bounce border-0 font-bold text-lg px-8 py-4",
       },
       size: {
         default: "h-10 px-4 py-2",

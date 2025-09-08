@@ -137,7 +137,7 @@ export const CertificateUpload = () => {
                   <p className="text-lg font-medium text-foreground">Upload Certificate</p>
                   <p className="text-sm text-muted-foreground">JSON, P7S, or PDF files accepted</p>
                 </div>
-                <Button variant="security" className="mt-2">
+                <Button variant="trustwipe" className="mt-2">
                   Choose Files
                 </Button>
               </label>

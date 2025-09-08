@@ -45,6 +45,11 @@ export default {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
+        blockchain: {
+          DEFAULT: "hsl(var(--blockchain))",
+          foreground: "hsl(var(--blockchain-foreground))",
+          glow: "hsl(var(--blockchain-glow))",
+        },
         warning: {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
@@ -74,7 +79,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        'gradient-security': 'var(--gradient-security)',
+        'gradient-trustwipe': 'var(--gradient-trustwipe)',
+        'gradient-blockchain': 'var(--gradient-blockchain)',
         'gradient-success': 'var(--gradient-success)',
         'gradient-subtle': 'var(--gradient-subtle)',
       },
